@@ -1,0 +1,23 @@
+<h1>Tic Tac Toe</h1>
+<button class="reset-button" (click)="reset()">Reset</button>
+<div *ngIf="winningPosition.length > 1">Player {{ currentPlayer }} has won</div>
+<!-- <section class="container">
+  <div id="0" class="box" (click)="play($event)">{{ game[0] }}</div>
+  <div id="1" class="box" (click)="play($event)">{{ game[1] }}</div>
+  <div id="2" class="box" (click)="play($event)">{{ game[2] }}</div>
+
+  <div id="3" class="box" (click)="play($event)">{{ game[3] }}</div>
+  <div id="4" class="box" (click)="play($event)">{{ game[4] }}</div>
+  <div id="5" class="box" (click)="play($event)">{{ game[5] }}</div>
+
+  <div id="6" class="box" (click)="play($event)">{{ game[6] }}</div>
+  <div id="7" class="box" (click)="play($event)">{{ game[7] }}</div>
+  <div id="8" class="box" (click)="play($event)">{{ game[8] }}</div>
+</section> -->
+
+<section class="container">
+  <app-square
+    class="box"  *ngFor="let item of beforegame; let i = index"
+    (selectedPosition)="play($event)"
+    [position]="i"></app-square>
+</section>
